@@ -1,0 +1,13 @@
+//代码生成配置，具体用法参考：http://enilu.gitee.io/web-flash/ecosystem/code-generator.html
+{
+  "codeConfig": {
+    "type": "xyz.guqing.app.code.CodeConfig",
+    "fields": {
+      entityModel: "qinlouyue-core",
+      daoModel: "qinlouyue-core",
+      serviceModel: "qinlouyue-core",
+      controllerModel: "qinlouyue-api",
+      viewModel: "qinlouyue-vue-admin"
+    }
+  }
+}

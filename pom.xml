@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.enilu</groupId>
-    <artifactId>flash-waimai</artifactId>
+    <groupId>xyz.guqing</groupId>
+    <artifactId>qinlouyue</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
     <modules>
-        <module>flash-waimai-api</module>
-        <module>flash-waimai-core</module>
-        <module>flash-waimai-generate</module>
+        <module>qinlouyue-api</module>
+        <module>qinlouyue-core</module>
+        <module>qinlouyue-generate</module>
     </modules>
 
     <properties>

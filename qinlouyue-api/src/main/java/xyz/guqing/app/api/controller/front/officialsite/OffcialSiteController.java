@@ -1,0 +1,75 @@
+package xyz.guqing.app.api.controller.front.officialsite;
+
+import xyz.guqing.app.api.controller.BaseController;
+import xyz.guqing.app.bean.entity.cms.Article;
+import xyz.guqing.app.bean.enumeration.cms.ChannelEnum;
+import xyz.guqing.app.bean.vo.front.Rets;
+import xyz.guqing.app.bean.vo.offcialsite.BannerVo;
+import xyz.guqing.app.bean.vo.offcialsite.News;
+import xyz.guqing.app.bean.vo.offcialsite.Product;
+import xyz.guqing.app.bean.vo.offcialsite.Solution;
+import xyz.guqing.app.service.cms.ArticleService;
+import xyz.guqing.app.service.cms.BannerService;
+import xyz.guqing.app.utils.Maps;
+import xyz.guqing.app.utils.factory.Page;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/offcialsite")
+public class OffcialSiteController extends BaseController {
+
+    @Autowired
+    private BannerService bannerService;
+    @Autowired
+    private ArticleService articleService;
+
+    @RequestMapping(method = RequestMethod.GET)
+    public Object index() {
+        Map<String, Object> dataMap = Maps.newHashMap();
+
+        BannerVo banner = bannerService.queryIndexBanner();
+        dataMap.put("banner", banner);
+        List<News> newsList = new ArrayList<>();
+        List<Article> articles = articleService.queryIndexNews();
+        for (Article article : articles) {
+            News news = new News();
+            news.setDesc(article.getTitle());
+            news.setUrl("/article?id=" + article.getId());
+            news.setSrc("static/images/icon/user.png");
+            newsList.add(news);
+        }
+        dataMap.put("newsList", newsList);
+
+        List<Product> products = new ArrayList<>();
+        Page<Article> articlePage = articleService.query(1, 4, ChannelEnum.PRODUCT.getId());
+        for (Article article : articlePage.getRecords()) {
+            Product product = new Product();
+            product.setId(article.getId());
+            product.setName(article.getTitle());
+            product.setImg(article.getImg());
+            products.add(product);
+        }
+        dataMap.put("productList", products);
+
+        List<Solution> solutions = new ArrayList<>();
+        articlePage = articleService.query(1, 4, ChannelEnum.SOLUTION.getId());
+        for (Article article : articlePage.getRecords()) {
+            Solution solution = new Solution();
+            solution.setId(article.getId());
+            solution.setName(article.getTitle());
+            solution.setImg(article.getImg());
+            solutions.add(solution);
+        }
+        dataMap.put("solutionList", solutions);
+        Map map = Maps.newHashMap("data",dataMap);
+        return Rets.success(map);
+
+    }
+}
