@@ -1,0 +1,27 @@
+<!-- logs.wxml -->
+<view class="container">
+  <van-search value="{{ keyword }}" use-action-slot bind:change="onSearchKeyChange" bind:clear="bindClearInputKeyword" placeholder="请输入搜索关键词">
+    <view slot="action" bind:tap="bindSearchTap">搜索</view>
+  </van-search>
+  <view class="no-search" wx:if="{{ !searchStatus}}">
+    <view class="search-keywords search-history" wx:if="{{!keyword  && historyKeyword.length}}">
+      <view class="h">
+        <text class="title">历史记录</text>
+        <van-dialog id="van-dialog" />
+        <van-icon bindtap="clearHistory" name="delete" class="icon" />
+      </view>
+      <view class="b">
+        <view class="item" bindtap="onKeywordTap" data-keyword="{{item}}" wx:for="{{historyKeyword}}" wx:key="item" hover-class="navigator-hover">
+          {{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="goods">
+    <goodslist wx:if="{{searchStatus}}" />
+  </view>
+  <view class="search-result-empty" wx:if="{{!goodsList.length && searchStatus}}">
+    <image class="icon" src="../../static/images/empty-search.png"></image>
+    <text class="text">您寻找的商品还未上架</text>
+  </view>
+</view>

@@ -1,0 +1,3 @@
+/**app.wxss**/
+/* 导入vant内置的样式 */
+@import '/miniprogram/miniprogram_npm/@vant/weapp/common/index.wxss';

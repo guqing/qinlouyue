@@ -1,0 +1,5 @@
+<!-- logs.wxml -->
+<view class="container log-list">
+  个人中心
+  <!-- <tabbar></tabbar> -->
+</view>

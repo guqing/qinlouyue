@@ -1,0 +1,110 @@
+/* 附近商家顶部菜单样式开始 */
+.nearby-shop-title {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.nearby-shop-container {
+  margin-top: 1px;
+}
+.sort-menu {
+  background-color: #fff;
+  padding-left: 12px;
+}
+/* 样式覆盖 */
+.van-dropdown-menu {
+  height: 30px !important;
+  font-size: 14px !important;
+}
+.van-dropdown-menu__item {
+  justify-content: left !important;
+}
+.van-dropdown-menu .van-dropdown-menu__title {
+  font-size: 14px !important;
+  padding: 0 8px 0 0;
+}
+.dropdown-menu-item .van-cell {
+  height: 30px !important;
+  line-height: 30px;
+  font-size: 14px;
+  padding: 0px;
+}
+/* 附近商家顶部菜单样式结束 */
+/* 附近商家商品主体内容样式开始 */
+.nearby-shop-content {
+  margin-top: 2px;
+}
+.nearby-shop-item {
+  margin-bottom: 10px;
+}
+.nearby-shop-content .van-card {
+  background-color: #fff !important;
+  padding: 0 8px 0 0;
+}
+/* 商品标题样式开始 */
+.nearby-shop-item .goods-title-container {
+  width: 100%;
+  margin-top: 5px;
+}
+.goods-title-container::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+.goods-title-container .goods-brand-tag {
+  background-color: #f8ee60;
+  padding: 1px 2px;
+  font-weight: bold;
+  font-size: 12px;
+  margin-right: 5px;
+}
+.goods-title-container .goods-title {
+  float: left;
+  font-size: 14px;
+  width: 54vw;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.goods-title-container .goods-assure {
+  float: right;
+}
+.goods-title-container .goods-assure-item {
+  background-color: #fff;
+  border: 1px solid rgb(243, 242, 242);
+  margin-right: 1px;
+  color: rgb(173, 171, 171);
+  font-size: 10px;
+}
+/* 商品标题样式结束 */
+/* 商品描述样式开始 */
+.goods-desc-container {
+  margin-top: 5px;
+}
+.goods-desc-container .goods-rate-value {
+  padding: 0 4px;
+}
+.goods-desc-container .goods-sales {
+  font-size: 10px;
+  color: rgb(161, 159, 159);
+}
+.goods-desc-container .goods-delivery-tag {
+  transform: translateY(28%);
+  display: block;
+  float: right;
+}
+.goods-desc-container .goods-delivery-tag-item {
+  font-size: 8px;
+}
+.goods-price-container {
+  margin-top: 12px;
+  font-size: 10px;
+}
+.goods-price-container .goods-price {
+  float: left;
+}
+.goods-delivery-time {
+  float: right;
+  color: #ff67a0;
+}

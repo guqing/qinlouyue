@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/order",
+    "pages/mine/mine",
+    "pages/search/search"
+  ],
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/order/order"
+      },
+      {
+        "pagePath": "pages/mine/mine"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "秦楼月",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-row": "/miniprogram/miniprogram_npm/@vant/weapp/row/index",
+    "van-col": "/miniprogram/miniprogram_npm/@vant/weapp/col/index",
+    "van-button": "/miniprogram/miniprogram_npm/@vant/weapp/button/index",
+    "van-image": "/miniprogram/miniprogram_npm/@vant/weapp/image/index",
+    "van-dialog": "/miniprogram/miniprogram_npm/@vant/weapp/dialog/index",
+    "van-icon": "/miniprogram/miniprogram_npm/@vant/weapp/icon/index",
+    "van-field": "/miniprogram/miniprogram_npm/@vant/weapp/field/index",
+    "van-panel": "/miniprogram/miniprogram_npm/@vant/weapp/panel/index",
+    "van-grid": "/miniprogram/miniprogram_npm/@vant/weapp/grid/index",
+    "van-grid-item": "/miniprogram/miniprogram_npm/@vant/weapp/grid-item/index",
+    "van-search": "/miniprogram/miniprogram_npm/@vant/weapp/search/index",
+    "van-dropdown-menu": "/miniprogram/miniprogram_npm/@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "/miniprogram/miniprogram_npm/@vant/weapp/dropdown-item/index",
+    "van-switch": "/miniprogram/miniprogram_npm/@vant/weapp/switch/index",
+    "van-cell": "/miniprogram/miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "/miniprogram/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-card": "/miniprogram/miniprogram_npm/@vant/weapp/card/index",
+    "van-rate": "/miniprogram/miniprogram_npm/@vant/weapp/rate/index",
+    "van-tag": "/miniprogram/miniprogram_npm/@vant/weapp/tag/index",
+    "van-divider": "/miniprogram/miniprogram_npm/@vant/weapp/divider/index"
+  }
+}

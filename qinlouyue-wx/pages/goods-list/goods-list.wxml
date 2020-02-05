@@ -1,0 +1,59 @@
+<!-- goods-list.wxml -->
+<view class="goods-container">
+  <view class="nearby-shop-container">
+    <view class="sort-menu">
+      <van-row>
+        <van-col span="7">
+          <van-dropdown-menu>
+            <van-dropdown-item value="{{ nearbyShopDropDownMenu.menuOptionValue }}" options="{{ nearbyShopDropDownMenu.menuOption }}" />
+          </van-dropdown-menu>
+        </van-col>
+        <van-col span="5" class="dropdown-menu-item">
+          <van-cell title="销量高" font-size="14px;" border="{{false}}" />
+        </van-col>
+        <van-col span="5" class="dropdown-menu-item">
+          <van-cell title="人气高" font-size="14px;" border="{{false}}" />
+        </van-col>
+        <van-col span="6">
+          <van-dropdown-menu style="float:right;">
+            <van-dropdown-item value="{{ nearbyShopDropDownMenu.menuOptionValue }}" options="{{ nearbyShopDropDownMenu.menuOption }}" />
+          </van-dropdown-menu>
+        </van-col>
+      </van-row>
+    </view>
+    <view class="nearby-shop-content">
+      <van-card thumb="https://img.yzcdn.cn/vant/ipad.jpeg" wx:for="{{5}}" wx:key="index" custom-class="nearby-shop-item">
+        <view slot="title" class="goods-title-container">
+          <view class="goods-title">
+            <span class="goods-brand-tag">品牌</span>
+            第{{index + 1}}家串串香,上街道街道评价都按时交都安静的
+          </view>
+          <view wx:for="{{3}}" class="goods-assure">
+            <span class="goods-assure-item">保</span>
+          </view>
+        </view>
+        <view slot="desc" class="goods-desc-container">
+          <van-rate value="{{ 3.3 }}" size="{{10}}" allow-half gutter="{{0}}" readonly />
+          <span class="goods-rate-value">3.3</span>
+          <span class="goods-sales">月销5000单</span>
+          <p class="goods-delivery-tag">
+            <van-tag type="primary" style="margin-right:1px;" custom-class="goods-delivery-tag-item">
+              蜂鸟专送
+            </van-tag>
+            <van-tag type="primary" plain custom-class="goods-delivery-tag-item">准时达</van-tag>
+          </p>
+        </view>
+        <view slot="tags" class="goods-price-container">
+          <p class="goods-price">￥20起送 | 配送费约￥5</p>
+          <p class="goods-delivery-time">
+            <i style="color: #888">|</i>
+            30分钟
+          </p>
+        </view>
+      </van-card>
+    </view>
+  </view>
+  <van-divider contentPosition="center" customStyle="color: #969799;border-color: #ebedf0;font-size: 12px;">
+    更多商家接入中，敬请期待
+  </van-divider>
+</view>

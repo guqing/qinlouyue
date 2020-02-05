@@ -1,0 +1,197 @@
+/**index.wxss**/
+.container {
+  /* background-color: khaki; */
+  margin: 0 10px 0 10px;
+  padding-bottom: 50px;
+  color: #333;
+}
+/* 顶部定位样式开始 */
+.location-container {
+  display: flex;
+  align-items: center;
+}
+.location-container .location-name {
+  font-size: 14px;
+}
+.location-container .right-arrow {
+  font-size: 10px;
+  margin-left: 2px;
+}
+.location-icon {
+  font-size: 18px;
+  color: #ff67a0;
+}
+/* 顶部定位样式结束 */
+
+.search {
+  margin-top: 15px;
+}
+
+/* 顶部banner样式开始 */
+.top-banner {
+  height: 78px;
+  margin-top: 8px;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  transition: 0.3s;
+  border-radius: 10px;
+  overflow: hidden;
+  /* background-color: #ff67a0; */
+  box-shadow: 0 3px 8px 0 rgba(179, 175, 175, 0.2);
+}
+
+.card image {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 顶部banner样式结束 */
+
+/* 九宫格菜单样式开始 */
+.menu-grid {
+  margin-top: 15px;
+}
+.grid-image {
+  width: 42px;
+  height: 42px;
+  display: block;
+}
+.grid-title {
+  margin-top: 5px;
+  font-size: 12px;
+}
+/* 九宫格菜单样式结束 */
+.advertise-swipper {
+  width: 100%;
+  height: 90px;
+}
+.advertise-swipper .swiper-item {
+  width: 100%;
+  height: 100%;
+}
+.van-grid-item__content {
+  padding: 0px 8px 10px 8px !important;
+}
+/* 测试样式开始,后续删除 */
+.demo-text-1 {
+  background-color: lightcoral;
+}
+.demo-text-2 {
+  background-color: lightseagreen;
+}
+.demo-text-3 {
+  background-color: rgb(23, 247, 98);
+}
+/* 测试样式结束 */
+
+/* 附近商家顶部菜单样式开始 */
+.nearby-shop-title {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.nearby-shop-container {
+  margin-top: 15px;
+}
+/* 样式覆盖 */
+.van-dropdown-menu {
+  height: 16px !important;
+  font-size: 14px !important;
+}
+.van-dropdown-menu__item {
+  justify-content: left !important;
+}
+.van-dropdown-menu .van-dropdown-menu__title {
+  font-size: 14px !important;
+  padding: 0 8px 0 0;
+}
+.dropdown-menu-item .van-cell {
+  height: 16px !important;
+  line-height: 16px;
+  padding: 0px;
+}
+/* 附近商家顶部菜单样式结束 */
+/* 附近商家商品主体内容样式开始 */
+.nearby-shop-content {
+  margin-top: 15px;
+}
+.nearby-shop-item {
+  margin-top: 10px;
+}
+.nearby-shop-content .van-card {
+  background-color: #fff !important;
+  padding: 0 8px 0 0;
+}
+/* 商品标题样式开始 */
+.nearby-shop-item .goods-title-container {
+  width: 100%;
+  margin-top: 5px;
+}
+.goods-title-container::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+.goods-title-container .goods-brand-tag {
+  background-color: #f8ee60;
+  padding: 1px 2px;
+  font-weight: bold;
+  font-size: 12px;
+  margin-right: 5px;
+}
+.goods-title-container .goods-title {
+  float: left;
+  font-size: 14px;
+  width: 54vw;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.goods-title-container .goods-assure {
+  float: right;
+}
+.goods-title-container .goods-assure-item {
+  background-color: #fff;
+  border: 1px solid rgb(243, 242, 242);
+  margin-right: 1px;
+  color: rgb(173, 171, 171);
+  font-size: 10px;
+}
+/* 商品标题样式结束 */
+/* 商品描述样式开始 */
+.goods-desc-container {
+  margin-top: 5px;
+}
+.goods-desc-container .goods-rate-value {
+  padding: 0 4px;
+}
+.goods-desc-container .goods-sales {
+  font-size: 10px;
+  color: rgb(161, 159, 159);
+}
+.goods-desc-container .goods-delivery-tag {
+  transform: translateY(28%);
+  display: block;
+  float: right;
+}
+.goods-desc-container .goods-delivery-tag-item {
+  font-size: 8px;
+}
+.goods-price-container {
+  margin-top: 12px;
+  font-size: 10px;
+}
+.goods-price-container .goods-price {
+  float: left;
+}
+.goods-delivery-time {
+  float: right;
+  color: #ff67a0;
+}
