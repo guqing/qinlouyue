@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Created  on 2017/12/29 0029.
@@ -29,6 +31,7 @@ public class PositionController extends BaseController {
     @RequestMapping(value = "/v1/cities",method = RequestMethod.GET)
     public Object cities(@RequestParam("type") String type, HttpServletRequest request) {
         Map cities = mongoRepository.findOne("cities");
+
         Map data = (Map) cities.get("data");
         switch (type){
             case "guess":

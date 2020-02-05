@@ -7,6 +7,7 @@ import cn.enilu.flash.bean.vo.business.CityInfo;
 import cn.enilu.flash.dao.MongoRepository;
 import cn.enilu.flash.utils.HttpClients;
 import cn.enilu.flash.utils.Maps;
+import org.apache.shiro.util.CollectionUtils;
 import org.nutz.json.Json;
 import org.nutz.mapl.Mapl;
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.net.URLEncoder;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -139,6 +141,10 @@ public class PositionService {
     public Map findByName(String cityName) {
         Map cities = mongoRepository.findOne("cities");
         Map<String, List> data = (Map) cities.get("data");
+        if(CollectionUtils.isEmpty(data)) {
+            return Collections.emptyMap();
+        }
+
         Map result = null;
         for (Map.Entry<String, List> entry : data.entrySet()) {
             List list = entry.getValue();

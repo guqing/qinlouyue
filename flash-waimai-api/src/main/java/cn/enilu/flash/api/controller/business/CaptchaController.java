@@ -5,13 +5,13 @@ import cn.enilu.flash.bean.vo.front.Rets;
 import cn.enilu.flash.cache.TokenCache;
 import cn.enilu.flash.utils.CaptchaCode;
 import cn.enilu.flash.utils.Maps;
+import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import sun.misc.BASE64Encoder;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -41,8 +41,8 @@ public class CaptchaController extends BaseController {
         logger.info("captchCode:{}", map.get("strEnsure").toString().toLowerCase());
         try {
             ImageIO.write((BufferedImage) map.get("image"), "png", outputStream);
-            BASE64Encoder encoder = new BASE64Encoder();
-            String base64 = encoder.encode(outputStream.toByteArray());
+            Base64 encoder = new Base64();
+            String base64 = encoder.encodeToString(outputStream.toByteArray());
             String captchaBase64 = "data:image/png;base64," + base64.replaceAll("\r\n", "");
             return Rets.success(Maps.newHashMap("captchCodeId",captchCodeId,"code",captchaBase64));
         } catch (IOException e) {

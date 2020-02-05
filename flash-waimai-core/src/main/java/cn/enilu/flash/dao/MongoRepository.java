@@ -17,9 +17,12 @@ import org.springframework.data.mongodb.core.query.NearQuery;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.CollectionUtils;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Created on 2017/12/29 0029.
@@ -103,12 +106,13 @@ public class MongoRepository {
 
     public Map findOne(String collectionName, Object... extraKeyValues) {
         Criteria criteria = criteria(extraKeyValues);
-        if (criteria == null) {
+        if (Objects.isNull(criteria)) {
             List<Map> list = mongoTemplate.findAll(Map.class, collectionName);
-            if (list != null) {
+
+            if (!CollectionUtils.isEmpty(list)) {
                 return list.get(0);
             }
-            return null;
+            return Collections.emptyMap();
         }
         return mongoTemplate.findOne(Query.query(criteria), Map.class, collectionName);
     }

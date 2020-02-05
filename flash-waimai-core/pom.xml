@@ -147,12 +147,7 @@
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>compile</scope>
         </dependency>
-        <!--test-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+
         <!--test-->
         <dependency>
             <groupId>junit</groupId>
