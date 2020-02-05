@@ -1,7 +1,7 @@
-# flash-waimai
-- 一个完整的外卖系统，包括手机端，后台管理，api
+# qinlouyue
+- 一个基于`flash-waimai`的完整的外卖系统，包括手机端，微信小程序客户端，后台管理，api
 - 基于spring boot和vue的前后端分离的外卖系统
-- 包含完整的手机端，后台管理功能
+- 包含完整的手机端，微信小程序端，后台管理功能
 
 ## 技术选型
 - 核心框架：Spring Boot
@@ -9,26 +9,23 @@
 - 数据库连接池：Druid
 - 缓存：Ehcache
 - 前端：Vue.js
-- 数据库：mysql5.5以上,Mongodb4.0(不要使用最新版4.2)
+- 数据库：mysql8以上,Mongodb4.0(不要使用最新版4.2)
 
 ## 模块
-- flash-waimai-mobile 手机端站点
-- flash-waimai-manage后台管理系统
-- flash-waimai-api java接口服务
-- flash-waimai-core 底层核心模块
-- flash-waimai-generate 代码生成模块
+- qinlouyue-mobile 手机端站点
+- qinlouyue-manage后台管理系统
+- qinlouyue-api java接口服务
+- qinlouyue-core 底层核心模块
+- qinlouyue-generate 代码生成模块
 
 ## 快速开始
 - 数据存储采用了mysql和mongodb，其中基础管理配置功能数据使用mysql，业务数据使用mongodb存储。
 - 创建mysql数据库
 ```sql
-    CREATE DATABASE IF NOT EXISTS waimai DEFAULT CHARSET utf8 COLLATE utf8_general_ci; 
-    CREATE USER 'waimai'@'%' IDENTIFIED BY 'waimai123';
-    GRANT ALL privileges ON waimai.* TO 'waimai'@'%';
-    flush privileges;
+    CREATE DATABASE IF NOT EXISTS qinlouyue DEFAULT CHARSET utf8 COLLATE utf8_general_ci; 
 ```
-- mysql数据库创建好了之后，启动flash-waimai-api服务，会自动初始化数据，无需开发人员自己手动初始化数据
-- 安装mongodb并创建数据库:flash-waimai
+- mysql数据库创建好了之后，`qinlouyue-api`服务，会自动初始化数据，无需开发人员自己手动初始化数据
+- 安装mongodb并创建数据库:`qinlouyue`
 使用mongorestore命令  导入mongodb数据,由于测试数据量较大，打包放在了百度云盘：链接：https://pan.baidu.com/s/1mfO7yckFL7lMb_O0BPsviw   提取码：apgd 下载后将文件解压到d:\\elm，如下命令导入数据：
                                               
 ```
@@ -37,7 +34,7 @@ mongorestore.exe -d flash-waimai d:\\elm
 - 下载项目测试数据的图片（商家和食品图片）：链接：https://pan.baidu.com/s/1rvZDspoapWa6rEq2D_5kzw 提取码：urzw ，将图片存放到t_sys_cfg表中system.file.upload.path配置的目录下
 
 - 启动管理平台:
-    - 进入flash-waimai-manage目录：
+    - 进入qinlouyue-manage目录：
     - 运行 npm install --registry=https://registry.npm.taobao.org
     - 运行npm run dev
     - 启动成功后访问 http://localhost:9528 ,登录，用户名密码:admin/admin
@@ -61,16 +58,15 @@ mongorestore.exe -d flash-waimai d:\\elm
 ## 文档
 [https://microapp.gitee.io/flash-waimai](https://microapp.gitee.io/flash-waimai)
 ## 开发进度
-- flash-waimai-manage [初步完成]
-- flash-waimai-mobile[完善中]
+- qinlouyue-manage [初步完成]
+- qinlouyue-mobile[完善中]
+- qinlouyue-wx[开发中]
 
 ## 鸣谢
 - 感谢[bailicangdu](https://github.com/bailicangdu),[enilu](https://github.com/enilu),本项目参考参考借鉴了[vue2-elm](https://github.com/bailicangdu/vue2-elm)，[web-flash](https://github.com/enilu/web-flash)，[vue2-manage](https://github.com/bailicangdu/vue2-manage)
 - 该项目克隆并扩展自[web-flash](https://github.com/enilu/web-flash),所以开发的时候多看看web-flash的[在线文档](http://enilu.gitee.io/web-flash)
 - 该项目不适用与商城系统解决方案，如果有商城系统需求，可以查看另外一个商城的开源系统[https://gitee.com/microapp/linjiashop](https://gitee.com/microapp/linjiashop)(支持H5,微信小程序,APP)
-
-## 交流
-- QQ群:936439613 微信:myenilu
+- 感谢[flash-waimai](https://microapp.gitee.io/flash-waimai)这么好的外卖系统
 # License
 
 [GPL](https://github.com/microapp-store/flash-waimai/blob/master/COPYING)
